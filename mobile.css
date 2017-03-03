@@ -1,0 +1,181 @@
+@import url(http://weloveiconfonts.com/api/?family=typicons);
+
+.* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[class*="typicons-"]:before {
+  font-family: 'Typicons', sans-serif;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.filter-container {
+  flex-basis: 20%;
+  position: absolute;
+  margin-left: -1000px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 2;
+}
+
+.header {
+  position: relative;
+  /*z-index: 5;*/
+  background-color: #000;
+  color: #fff;
+  height: 60px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.prompt p{
+ margin-left: 10px;
+ font-size: 18px;
+ color: #4d4d4d;
+}
+
+.options{
+  list-style:none;
+  display: inline-flex;
+}
+
+.options li{
+ background-color: grey;
+ margin-right: 10px;
+ text-align: center;
+ padding: 10px;
+ color: #fff;
+}
+
+.options li:active{
+  background-color: #000;
+  color: #000;
+}
+
+
+input {
+  height: 40px;
+  width: 65%;
+  margin: 20px 10px;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+button {
+  background: #cb4e4e;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 5px 5px;
+  /*box-shadow: 0 6px #ab3c3c;*/
+  height: 40px;
+  width: 20%;
+  min-width: 80px;
+}
+
+#places {
+  list-style:none;
+  font-size: 18px;
+  line-height: 30px;
+  color: #4d4d4d;
+  padding-left:0;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-header {
+  height: 60px;
+  background-color: #4d4d4d;
+  color: #fff;
+  font-size: 40px;
+  line-height: 60px;
+}
+
+#feedback{
+  position: absolute;
+  width: 150px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 20px auto;
+  padding: 10px;
+  overflow: visible;
+  background-color: #000;
+  opacity: 0.8;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 65px;
+  z-index: 2;
+  text-transform:capitalize;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.highlighted {
+  background-color: #000;
+  color: #fff;
+}
+
+.menu {
+  position: relative;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+
+.menu-color{
+  color: #e6e6e6;
+}
+
+@keyframes filterSlide {
+  0% {margin-left: -600px;}
+  100% {margin-left: 0px;}
+}
+
+.filterSlide{
+  animation-name: filterSlide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+}
+
+.ui-autocomplete {
+  position: fixed;
+  border: 1px solid #d9d9d9;
+  width: 100px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: left;
+  list-style: none;
+  color: #4d4d4d;
+  background-color: #f2f2f2;
+  opacity: 0.98;
+  padding:20px;
+  z-index: 6;
+}
+
+.ui-autocomplete li:active {
+  color: #000;
+}
+
+.ui-helper-hidden-accessible { display:none; }

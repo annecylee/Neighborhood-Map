@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" media="screen and (min-width: 801px)" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="mobile.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class = 'filter-container'>
+        <div class='header'>Places Around You</div>
+        <form>
+          <input id="autocomplete" type='text' placeholder='  You are looking for...'>
+          <button data-bind='click: filter'>filter</button>
+        </form>
+
+        <div class='prompt' data-bind="visible: !self.filteredPlaces().length">
+          <p>No result. Please select from following categories</p>
+          <ul class='options'>
+            <li data-bind='click: parkSelected'>park</li>
+            <li data-bind='click: grocerySelected'>grocery</li>
+            <li data-bind='click: coffeeSelected'>coffee</li>
+            <li data-bind='click: restaurantSelected'>restaurant</li>
+        </ul>
+        </div>
+
+        <ul id='places' data-bind='foreach: filteredPlaces'>
+          <li aria-hidden="true" class="typicons-location" data-bind="text: location.name, click: populateInfoWindow,
+                        css: {highlighted: $rawData.highlight}"></li>
+        </ul>
+      </div>
+      <div class='map-container'>
+        <div aria-hidden="true" class="map-header">
+          <div class="menu typicons-feed" data-bind= 'click:menuIsClicked'></div>
+        </div>
+        <p id='feedback' style="display: none"></p>
+
+          <div id='map'></div>
+      </div>
+  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/libs/knockout-3.2.0.js"></script>
+    <script src="js/libs/knockout.mapping.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&v=3&callback=googleSuccess" onerror="googleError()">
+    </script>
+    <script src="js/model.js"></script>
+    <script src="js/mapView.js"></script>
+    <script src="js/viewModel.js"></script>
+  </body>
+</html>
